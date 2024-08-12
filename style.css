@@ -2,10 +2,13 @@
 
 :root{
     --color-primario: #EEEEEE;
-    --color-secundario: #201E43;
+    --color-secundario: #0A3871;
 
     --fuente-general: font-family: "Inter", sans-serif;
     --fuente-general-weight: 400 ;
+    --fuente-color1:#0A3871;
+    --fuente-color2:#EEEEEE;
+    --fuente-color3:#495057;
 }
 
 *{
@@ -18,7 +21,6 @@
 body{
     height: 100vh;
     background-color: var(--color-primario);
-    color: var(--color-secundario);
     box-sizing: border-box;
 }
 
@@ -27,15 +29,16 @@ body{
     justify-content: space-between; /*Ayuda a distribuir el espacio libre sobrante cuando todos los elementos*/
     align-items: flex-start; /*define el comportamiento predeterminado de cómo se disponen los elementos flexibles a lo largo del eje transversal en la línea actual.*/
     margin: 2.5rem;
-}
-
-.block1{
-
+    gap:5rem;
 }
 
 .block1_encriptar{
     font-size: 2rem;
     margin: 10.5rem 0 0 0 ;
+    border:none;
+    background-color: var(--color-primario) ;
+    color: var(--fuente-color1);
+    text-decoration: none;
 }
 
 .reglas_imagen{
@@ -47,8 +50,42 @@ body{
 
 .block1_reglas{
     font-size: 0.75rem;
+    color: var(--fuente-color3);
 }
 
 .block1_botones{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
     font-size: 1rem;
+}
+
+.block1_boton_Encrip{
+    font-size: 1rem;
+    color: var(--fuente-color2);
+    border: 1px solid var(--color-secundario);
+    background-color: var(--color-secundario);
+    border-radius: 1.5rem;
+    height: 4.18rem;
+    width: 20.5rem;
+}
+
+.block1_boton_Desencrip{
+    font-size: 1rem;
+    color: var(--fuente-color1);
+    border: 1px solid var(--color-secundario);
+    background-color: var(--color-primario);
+    border-radius: 1.5rem;
+    height: 4.18rem;
+    width: 20.5rem;
+}
+
+.footer{
+    font-size: 1rem;
+    color: var(--fuente-color3);
+    text-align: center;
+    background-color: var(--color-secundario);
+    color: var(--fuente-color2);
+    padding: 1rem;
+    
 }
