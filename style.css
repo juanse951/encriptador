@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --color-primario: #EEEEEE;
+    --color-secundario: #201E43;
+
+    --fuente-general: font-family: "Inter", sans-serif;
+    --fuente-general-weight: 400 ;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--fuente-general);
+    font-weight: var(--fuente-general-weight);
+}
+
+body{
+    height: 100vh;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    box-sizing: border-box;
+}
+
+.principal_container{
+    display: flex;
+    justify-content: space-between; /*Ayuda a distribuir el espacio libre sobrante cuando todos los elementos*/
+    align-items: flex-start; /*define el comportamiento predeterminado de cómo se disponen los elementos flexibles a lo largo del eje transversal en la línea actual.*/
+    margin: 2.5rem;
+}
+
+.block1{
+
+}
+
+.block1_encriptar{
+    font-size: 2rem;
+    margin: 10.5rem 0 0 0 ;
+}
+
+.reglas_imagen{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 1rem 0; /* arriba/derecha/abajo/izquierda*/
+    gap:0.5rem;
+}
+
+.block1_reglas{
+    font-size: 0.75rem;
+}
+
+.block1_botones{
+    font-size: 1rem;
+}
