@@ -34,8 +34,10 @@ body{
 }
 
 .block1{
-    width: 56.7vw;
-    height: 68.75vh;
+   /* width: 56.7vw;
+    height: 68.75vh;*/
+    width: 56.7%;
+    height: 68.7%;
 }
 
 .block1_encriptar{
@@ -46,6 +48,7 @@ body{
     color: var(--fuente-color1);
     text-decoration: none;
     width: 100%;
+    
 }
 
 .reglas_imagen{
@@ -144,7 +147,7 @@ body{
    
     .principal_container{
         flex-direction: column;
-        gap: 1.5rem ;
+        gap: 3.5rem ;
         margin: 0;
     }
 
