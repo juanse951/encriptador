@@ -14,7 +14,6 @@
 *{
     padding: 0;
     margin: 0;
-    background-color: var(--color-primario);
     font-family: var(--fuente-general);
     font-weight: var(--fuente-general-weight);
     line-height: 150%;
@@ -26,6 +25,7 @@ body{
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+    background-color: var(--color-primario);
 }
 
 .principal_container{
@@ -96,12 +96,11 @@ body{
 }
 
 .block2{
-    width: 37.3%; 
-    height: 75.3%;
+    width: 25%; 
+   /* height: 75.3%;*/
     background-color: var(--fuente-color2);
     border-radius: 1.5rem;
     padding: 2rem;
-    gap: 2rem;
 }
 
 .block2_desencriptar{
@@ -115,18 +114,18 @@ body{
    
    }
 
-.block2_desencriptar{
+/*.block2_desencriptar{
     outline: none;
-  }
+  }*/
 
   /* background-image: url(/assets/Resultado.png);
    background-repeat: no-repeat;
    position: fixed;*/
 
 
-/*.block2_resultado_imagen{
+.block2_resultado_imagen{
     width: 100%;
-}*/
+}
 
 .block2_boton{
     display: flex;
@@ -136,7 +135,7 @@ body{
     font-size: 1rem;
     color: var(--fuente-color1);
     border: 1px solid var(--color-secundario);
-    background-color: var(--color-primario);
+    background-color: var(--fuente-color2);
     border-radius: 1.5rem;
     padding: 1.5rem 0;  
     width: 100%;
@@ -220,6 +219,9 @@ body{
         margin: 0 1rem 0 1rem;
     }
     
+    .block2{
+        margin: 0 1rem 2.5rem 1rem;
+    }
     /*.block2_resultado_imagen{
         content: url("/assets/imagenPhone.png");
         display: block;
