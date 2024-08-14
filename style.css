@@ -1,55 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
-    --color-primario: #EEEEEE;
+    --color-primario: #E5E5E5;
     --color-secundario: #0A3871;
 
     --fuente-general:"Inter", sans-serif;
     --fuente-general-weight: 400 ;
     --fuente-color1:#0A3871;
-    --fuente-color2:#EEEEEE;
+    --fuente-color2:#FFFFFF;
     --fuente-color3:#495057;
 }
 
 *{
     padding: 0;
     margin: 0;
+    background-color: var(--color-primario);
     font-family: var(--fuente-general);
     font-weight: var(--fuente-general-weight);
+    line-height: 150%;
 }
+
+::placeholder { color:var(--fuente-color1)}
 
 body{
     height: 100vh;
     width: 100vw;
-    background-color: var(--color-primario);
     box-sizing: border-box;
 }
 
 .principal_container{
     display: flex;
-    justify-content: space-between; /*Ayuda a distribuir el espacio libre sobrante cuando todos los elementos*/
-    align-items: flex-start; /*define el comportamiento predeterminado de cómo se disponen los elementos flexibles a lo largo del eje transversal en la línea actual.*/
+    justify-content: space-between; 
+    align-items: flex-start;
     margin: 2.5rem ;
     gap:5rem;
 }
 
 .block1{
-   /* width: 56.7vw;
-    height: 68.75vh;*/
     width: 56.7%;
     height: 68.7%;
 }
 
 .block1_encriptar{
     font-size: 2rem;
-    margin: 8rem 0 0 0;
+    margin-top: 8rem;
     border:none;
     background-color: var(--color-primario) ;
     color: var(--fuente-color1);
     text-decoration: none;
+    text-transform: lowercase;
     width: 100%;
-    
 }
+
+  .block1_encriptar:focus{
+    outline: none;
+  }
 
 .reglas_imagen{
     display: flex;
@@ -91,10 +96,49 @@ body{
 }
 
 .block2{
-    width: 37.3vw; 
+    width: 37.3%; 
+    height: 75.3%;
+    background-color: var(--fuente-color2);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    gap: 2rem;
 }
 
-.block2_resultado_imagen{
+.block2_desencriptar{
+   font-size: 1.5rem;
+   border: none;
+   background-color: var(--fuente-color2);
+   color: var(--fuente-color1);
+   text-decoration: none; 
+   text-transform: lowercase;
+   width: 100%;
+   
+   }
+
+.block2_desencriptar{
+    outline: none;
+  }
+
+  /* background-image: url(/assets/Resultado.png);
+   background-repeat: no-repeat;
+   position: fixed;*/
+
+
+/*.block2_resultado_imagen{
+    width: 100%;
+}*/
+
+.block2_boton{
+    display: flex;
+    justify-content: center;
+}
+.block2_boton_copiar{
+    font-size: 1rem;
+    color: var(--fuente-color1);
+    border: 1px solid var(--color-secundario);
+    background-color: var(--color-primario);
+    border-radius: 1.5rem;
+    padding: 1.5rem 0;  
     width: 100%;
 }
 
@@ -132,14 +176,14 @@ body{
         
     }
 
-    .block2_resultado_imagen{
+    /*.block2_resultado_imagen{
         content: url("/assets/imagenTablet.png");
         display: block;
         width: 220%;
         height: auto;
         margin-left: 12%;
         
-        }
+        }*/
 
   }
 
@@ -176,13 +220,13 @@ body{
         margin: 0 1rem 0 1rem;
     }
     
-    .block2_resultado_imagen{
+    /*.block2_resultado_imagen{
         content: url("/assets/imagenPhone.png");
         display: block;
         width: 220%;
         height: auto;
         margin-left: 18%;
-        }
+        }*/
 
   }
 
