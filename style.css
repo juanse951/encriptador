@@ -108,7 +108,7 @@ body{
    
     .principal_container{
         flex-direction: column;
-        gap: 1.5rem ;
+        gap: 4rem ;
     }
 
     .logo_alura{
@@ -119,11 +119,14 @@ body{
     }
 
     .block1{
-        width: 100%;  
+         height: auto;
+         width: 100%;
+         
     }
 
     .block1_encriptar{
-        margin: 5% 0 0 0;
+        margin: 0rem;
+        
     }
 
     .block2_resultado_imagen{
@@ -131,7 +134,7 @@ body{
         display: block;
         width: 220%;
         height: auto;
-        margin-left: 5%;
+        margin-left: 12%;
         
         }
 
@@ -158,6 +161,7 @@ body{
     .block1_encriptar{
         margin: 0 1rem 0 1rem;
         height: 50%;
+        width: 90%;
     }
 
     .reglas_imagen{
@@ -166,6 +170,7 @@ body{
 
     .block1_botones{
         flex-direction: column;
+        margin: 0 1rem 0 1rem;
     }
     
     .block2_resultado_imagen{
@@ -173,7 +178,7 @@ body{
         display: block;
         width: 220%;
         height: auto;
-        margin-left: 10%;
+        margin-left: 18%;
         }
 
   }
