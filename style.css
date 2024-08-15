@@ -114,6 +114,7 @@ body{
    text-decoration: none; 
    text-transform: lowercase;
    width: 100%;   
+   margin-bottom: 2rem;
    }
 
 /*.block2_desencriptar{
@@ -198,26 +199,24 @@ body{
     .principal_container{
         flex-direction: column;
         gap: 3.5rem ;
+        
     }
 
     .logo_alura{
         content: url("/assets/aPhone.png");
         display: block;
-        width: auto;
+        width: 100%;
         height: auto;
     }
     .block1{
         height:auto;
+        width: 100%;
     }
 
     .block1_encriptar{
         margin: 0 1rem 0 1rem;
         height: 50%;
         width: 90%;
-    }
-
-    .reglas_imagen{
-        margin: 1rem;
     }
 
     .block1_botones{
