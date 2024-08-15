@@ -96,11 +96,14 @@ body{
 }
 
 .block2{
-    width: 25%; 
-   /* height: 75.3%;*/
+    box-sizing: border-box;
+    width: 33.3%; 
+    height: auto;
     background-color: var(--fuente-color2);
     border-radius: 1.5rem;
     padding: 2rem;
+    margin: 0;
+    
 }
 
 .block2_desencriptar{
@@ -110,18 +113,12 @@ body{
    color: var(--fuente-color1);
    text-decoration: none; 
    text-transform: lowercase;
-   width: 100%;
-   
+   width: 100%;   
    }
 
 /*.block2_desencriptar{
     outline: none;
   }*/
-
-  /* background-image: url(/assets/Resultado.png);
-   background-repeat: no-repeat;
-   position: fixed;*/
-
 
 .block2_resultado_imagen{
     width: 100%;
@@ -175,6 +172,16 @@ body{
         
     }
 
+    .block2{
+        height: auto;
+        width: 100%;
+    }
+
+    .block2_desencriptar{
+        height: 180px;
+        
+    }
+    
     /*.block2_resultado_imagen{
         content: url("/assets/imagenTablet.png");
         display: block;
@@ -191,7 +198,6 @@ body{
     .principal_container{
         flex-direction: column;
         gap: 3.5rem ;
-        margin: 0;
     }
 
     .logo_alura{
@@ -220,8 +226,10 @@ body{
     }
     
     .block2{
-        margin: 0 1rem 2.5rem 1rem;
+        height: auto;
+        width: 100%;
     }
+
     /*.block2_resultado_imagen{
         content: url("/assets/imagenPhone.png");
         display: block;
