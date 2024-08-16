@@ -34,10 +34,7 @@ body{
 
 .principal_container{
     display: flex;
-    flex-flow: row nowrap; /*predeterminado*/
-    justify-content: flex-start; /*predeterminado*/
-    align-items: stretch;
-    /*margin: 2.5rem ;*/
+    
     gap:5rem;
 }
 
@@ -106,6 +103,7 @@ body{
     background-color: var(--fuente-color2);
     border-radius: 1.5rem;
     position: relative;
+    margin: 0rem 2.5rem 2.5rem 0rem;
 }
 
 .block2_resultado_imagen{
@@ -138,13 +136,6 @@ body{
 .block2_desencriptar:focus{
     outline: none;
   }
-
-
-
-/*.block2_boton{
-    display: flex;
-    justify-content: center;
-}*/
 
 .block2_boton_copiar{
     font-size: 1rem;
