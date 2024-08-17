@@ -203,6 +203,8 @@ body{
     .logo_alura{
         content: url("/assets/aPhone.png");
         margin: 0;
+        width: auto;
+        height: auto;
     }
 
     .principal_container{
