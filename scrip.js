@@ -21,6 +21,31 @@ function encriptar(stringEncriptada){
     return stringEncriptada;
 }
 
+function copiar(){
+    let textoCopiado = document.querySelector(".block2_desencriptar");
+
+    textoCopiado.select();
+    textoCopiado.setSelectionRange(0, 99999);
+
+    navigator.clipboard.writeText(textoCopiado.value);
+
+    textArea2.value = "";
+    ocultarTextArea2();
+    mostrarImagen();
+    alert("Texto copiado");
+    
+}
+
+function mostrarImagen(){
+    let imagen = document.querySelector(".block2_resultado_imagen");
+
+    if(imagen.style.display === "bloack"){
+        imagen.style.display = "none";
+    } else {
+        imagen.style.display = "block";
+    }
+}
+
 function ocultarImagen(){
     let imagen = document.querySelector(".block2_resultado_imagen");
 
@@ -38,5 +63,15 @@ function mostrarTextArea2(){
             textAreaDiv2.style.display = "none";
         }else{
             textAreaDiv2.style.display = "block";
+        }
+}
+
+function ocultarTextArea2(){
+    let textAreaDiv2 = document.querySelector(".block2_area_imagen");
+    
+        if(textAreaDiv2.style.display === "none"){
+            textAreaDiv2.style.display = "block";
+        }else{
+            textAreaDiv2.style.display = "none";
         }
 }
