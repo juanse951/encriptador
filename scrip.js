@@ -1,5 +1,9 @@
 let textArea1 = document.querySelector(".block1_encriptar");
 let textArea2 = document.querySelector(".block2_desencriptar");
+let reglasImagen = document.querySelector(".block1_reglas_imagen");
+let reglasTexto = document.querySelector(".block1_reglas");
+let encriptado = false;
+let reglaAplicada = true;
 
 function noTexto1(){
     if(textArea1.value.trim() === ""){
@@ -21,8 +25,35 @@ function noTexto2(){
 
 }
 
+textArea1.addEventListener("input", function(){
+    restringirCaracteres(textArea1);
+});
+
+function restringirCaracteres(textArea1){ 
+    let valor = textArea1.value;
+    let valorLimpio = valor.replace(/[^a-zA-Z0-9\s]/g,"");
+    textArea1.value = valorLimpio;
+
+    if(valor !== valorLimpio){
+        reglasImagen.style.width = "1.3rem";
+        reglasImagen.style.height = "1.3rem";
+        reglasTexto.style.fontSize = "1.3rem";
+        reglaAplicada = false ;
+    }else{
+        if(!reglaAplicada){
+        reglasImagen.style.width = "";
+        reglasImagen.style.height = "";
+        reglasTexto.style.fontSize = "";
+        reglaAplicada = true ; 
+     }
+    }
+}
+
 function botonEncriptar(){
+    encriptado = true ;
     document.querySelector(".block1_boton_Encrip").setAttribute("disabled","true");
+    document.querySelector(".block1_boton_Desencrip").setAttribute("disabled","true");
+
     ocultarImagen();
     mostrarTextArea2();
     let textoEncriptado = encriptar(textArea1.value);
@@ -31,12 +62,15 @@ function botonEncriptar(){
 }
 
 function botonDesencriptar(){
+    encriptado = false ;
     document.querySelector(".block1_boton_Desencrip").setAttribute("disabled","true");
+    document.querySelector(".block1_boton_Encrip").setAttribute("disabled","true");
+
     ocultarImagen();
     mostrarTextArea2();
     let textoDesencriptado = desEncriptar(textArea1.value);
     textArea2.value = textoDesencriptado;
-    textArea1.value = "";
+    textArea1.value = "Copia el texto\nPégalo aquí\nHaz clic en: Encriptar\nMira el resultado";
 }
 
 function encriptar(stringEncriptada){
@@ -75,7 +109,13 @@ function copiar(){
     textArea1.value = "";
     ocultarTextArea2();
     mostrarImagen();
-    document.querySelector(".block1_boton_Desencrip").removeAttribute("disabled"); 
+
+    if(encriptado){
+        document.querySelector(".block1_boton_Desencrip").removeAttribute("disabled"); 
+    }else {
+        document.querySelector(".block1_boton_Encrip").removeAttribute("disabled"); 
+    }
+        
 }
 
 function mostrarImagen(){
