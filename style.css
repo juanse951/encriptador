@@ -3,6 +3,7 @@
 :root{
     --color-primario: #E5E5E5;
     --color-secundario: #0A3871;
+    --color-disabled-boton: #838b93; 
 
     --fuente-general:"Inter", sans-serif;
     --fuente-general-weight: 400 ;
@@ -92,6 +93,10 @@ body{
     border-radius: 1.5rem;
     padding: 1.5rem 0;  
     width: 100%;
+}
+
+.block1_boton_Desencrip:disabled, .block1_boton_Encrip:disabled {
+    background: var(--color-disabled-boton);
 }
 
 .block2{
