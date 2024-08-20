@@ -1,9 +1,21 @@
+//variables-----------------------------------------
 let textArea1 = document.querySelector(".block1_encriptar");
 let textArea2 = document.querySelector(".block2_desencriptar");
-let reglasImagen = document.querySelector(".block1_reglas_imagen");
-let reglasTexto = document.querySelector(".block1_reglas");
+let botonEn = document.querySelector(".block1_boton_Encrip");
+let botonDes = document.querySelector(".block1_boton_Desencrip");
+let botonCopy = document.querySelector(".block2_boton_copiar"); 
 let encriptado = false;
 let reglaAplicada = true;
+let scrollAply = false;
+//-------------------------------------------------
+
+//eventos agregados--------------------------------
+window.addEventListener("resize", controlScroll);
+
+textArea1.addEventListener("input", function(){
+    restringirCaracteres(textArea1);
+});
+//--------------------------------------------------
 
 function noTexto1(){
     if(textArea1.value.trim() === ""){
@@ -25,11 +37,9 @@ function noTexto2(){
 
 }
 
-textArea1.addEventListener("input", function(){
-    restringirCaracteres(textArea1);
-});
-
 function restringirCaracteres(textArea1){ 
+    let reglasImagen = document.querySelector(".block1_reglas_imagen");
+    let reglasTexto = document.querySelector(".block1_reglas");
     let valor = textArea1.value;
     let valorLimpio = valor.replace(/[^a-zA-Z0-9\s]/g,"");
     textArea1.value = valorLimpio;
@@ -51,8 +61,8 @@ function restringirCaracteres(textArea1){
 
 function botonEncriptar(){
     encriptado = true ;
-    document.querySelector(".block1_boton_Encrip").setAttribute("disabled","true");
-    document.querySelector(".block1_boton_Desencrip").setAttribute("disabled","true");
+    botonEn.setAttribute("disabled","true");
+    botonDes.setAttribute("disabled","true");
 
     ocultarImagen();
     mostrarTextArea2();
@@ -63,8 +73,8 @@ function botonEncriptar(){
 
 function botonDesencriptar(){
     encriptado = false ;
-    document.querySelector(".block1_boton_Desencrip").setAttribute("disabled","true");
-    document.querySelector(".block1_boton_Encrip").setAttribute("disabled","true");
+    botonDes.setAttribute("disabled","true");
+    botonEn.setAttribute("disabled","true");
 
     ocultarImagen();
     mostrarTextArea2();
@@ -111,9 +121,9 @@ function copiar(){
     mostrarImagen();
 
     if(encriptado){
-        document.querySelector(".block1_boton_Desencrip").removeAttribute("disabled"); 
+        botonDes.removeAttribute("disabled"); 
     }else {
-        document.querySelector(".block1_boton_Encrip").removeAttribute("disabled"); 
+        botonEn.removeAttribute("disabled"); 
     }
         
 }
@@ -158,3 +168,39 @@ function ocultarTextArea2(){
         }
 }
 
+function controlScroll(){
+    if(window.innerWidth > 820 && scrollAply){
+
+        botonEn.removeEventListener("click", () => {
+            let posicionDestino = botonCopy.offsetTop;
+            window.scrollTo({
+                top: posicionDestino,behavior: "smooth"});
+        });   
+        
+        botonDes.removeEventListener("click", () => {
+            let posicionDestino = botonCopy.offsetTop;
+            window.scrollTo({
+                top: posicionDestino,behavior: "smooth"});
+        });
+        
+        scrollAply = false;
+
+    }else if(window.innerWidth <= 820 && !scrollAply) {
+         
+        botonEn.addEventListener("click", () => {
+            let posicionDestino = botonCopy.offsetTop;
+            window.scrollTo({
+                top: posicionDestino,behavior: "smooth"});
+        });   
+        
+        botonDes.addEventListener("click", () => {
+            let posicionDestino = botonCopy.offsetTop;
+            window.scrollTo({
+                top: posicionDestino,behavior: "smooth"});
+        }); 
+        
+    scrollAply= true;
+    }
+}
+
+controlScroll();
