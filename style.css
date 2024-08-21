@@ -3,6 +3,7 @@
 :root{
     --color-primario: #E5E5E5;
     --color-secundario: #0A3871;
+    --color-terciario: #ffffff;
     --color-disabled-boton: #838b93; 
 
     --fuente-general:"Inter", sans-serif;
@@ -114,7 +115,7 @@ body{
     flex-flow: column;
     width: 33.3%; 
     height: auto;
-    background-color: var(--fuente-color2);
+    background-color: var(--color-terciario);
     border-radius: 1.5rem;
     position: relative;
     margin: 0rem 2.5rem 2.5rem 0rem;
@@ -140,7 +141,7 @@ body{
 .block2_desencriptar{
    font-size: 1.5rem;
    border: none;
-   background-color: var(--fuente-color2);
+   background-color: var(--color-terciario);
    color: var(--fuente-color1);
    text-decoration: none; 
    text-transform: lowercase;
@@ -152,7 +153,7 @@ body{
     font-weight: 600;
     color: var(--fuente-color1);
     border: 3px solid var(--color-secundario);
-    background-color: var(--fuente-color2);
+    background-color: var(--color-terciario);
     border-radius: 1.5rem;
     padding: 1.5rem 0;  
     width: 100%;

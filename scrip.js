@@ -9,6 +9,7 @@ let textoCopiado = document.querySelector(".block2_desencriptar");
 let encriptado = false;
 let reglaAplicada = true;
 let scrollAply = false;
+let fondoBlock2 = false;
 //-------------------------------------------------
 
 //eventos agregados--------------------------------
@@ -17,6 +18,9 @@ window.addEventListener("resize", controlScroll);
 textArea1.addEventListener("input", function(){
     restringirCaracteres(textArea1);
 });
+
+botonEn.addEventListener("click", cambiarFondo);
+
 //--------------------------------------------------
 function encriptar(stringEncriptada){
     let matrizCodigo1 = [["e" , "enter"] , ["i" , "imes"] , ["a" , "ai"] , ["o" , "ober"] , ["u" , "ufat"]];
@@ -185,7 +189,7 @@ function ocultarImagen(){
 
 function mostrarTextArea2(){
     let textAreaDiv2 = document.querySelector(".block2_area_imagen");
-    
+        
         if(textAreaDiv2.style.display === "block"){
             textAreaDiv2.style.display = "none";
         }else{
