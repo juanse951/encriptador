@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
-    --color-primario: #E5E5E5;
-    --color-secundario: #0A3871;
+    --color-primario: #DAFFFB;
+    --color-secundario: #04364A;
     --color-terciario: #ffffff;
-    --color-disabled-boton: #838b93; 
+    --color-disabled-boton: #64CCC5; 
 
     --fuente-general:"Inter", sans-serif;
     --fuente-general-weight: 400 ;
-    --fuente-color1:#0A3871;
+    --fuente-color1:#04364A;
     --fuente-color2:#FFFFFF;
-    --fuente-color3:#495057;
+    --fuente-color3:#176B87;
 }
 
 *{

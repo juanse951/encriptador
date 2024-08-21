@@ -19,8 +19,6 @@ textArea1.addEventListener("input", function(){
     restringirCaracteres(textArea1);
 });
 
-botonEn.addEventListener("click", cambiarFondo);
-
 //--------------------------------------------------
 function encriptar(stringEncriptada){
     let matrizCodigo1 = [["e" , "enter"] , ["i" , "imes"] , ["a" , "ai"] , ["o" , "ober"] , ["u" , "ufat"]];
