@@ -53,12 +53,14 @@ function restringirCaracteres(textArea1){
         reglasImagen.style.width = "1.3rem";
         reglasImagen.style.height = "1.3rem";
         reglasTexto.style.fontSize = "1.3rem";
+        reglasTexto.style.color = "red";
         reglaAplicada = false ;
     }else{
         if(!reglaAplicada){
         reglasImagen.style.width = "";
         reglasImagen.style.height = "";
         reglasTexto.style.fontSize = "";
+        reglasTexto.style.color = "";
         reglaAplicada = true ; 
      }
     }

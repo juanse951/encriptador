@@ -147,10 +147,6 @@ body{
    width: 100%;   
    }
 
-.block2_desencriptar:focus{
-    outline: none;
-  }
-
 .block2_boton_copiar{
     font-size: 1rem;
     font-weight: 600;
@@ -192,7 +188,7 @@ body{
     }
 
     .block1_encriptar{
-        height: 37rem;
+        height: 23rem;
     }
 
     .block2{
@@ -203,7 +199,7 @@ body{
     }
 
     .block2_desencriptar{
-        height: 11rem;
+        height: 8rem;
     }
     
     .block2_resultado_imagen{
@@ -245,7 +241,7 @@ body{
     }
 
     .block2_desencriptar{
-       height: 27rem;
+       height: 15rem;
     }
 
     .block2_resultado_imagen{
