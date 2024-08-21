@@ -4,6 +4,8 @@ let textArea2 = document.querySelector(".block2_desencriptar");
 let botonEn = document.querySelector(".block1_boton_Encrip");
 let botonDes = document.querySelector(".block1_boton_Desencrip");
 let botonCopy = document.querySelector(".block2_boton_copiar"); 
+let botonPaste = document.querySelector(".block1_boton_pegar");
+let textoCopiado = document.querySelector(".block2_desencriptar");
 let encriptado = false;
 let reglaAplicada = true;
 let scrollAply = false;
@@ -16,25 +18,28 @@ textArea1.addEventListener("input", function(){
     restringirCaracteres(textArea1);
 });
 //--------------------------------------------------
+function encriptar(stringEncriptada){
+    let matrizCodigo1 = [["e" , "enter"] , ["i" , "imes"] , ["a" , "ai"] , ["o" , "ober"] , ["u" , "ufat"]];
+    stringEncriptada = stringEncriptada.toLowerCase();
 
-function noTexto1(){
-    if(textArea1.value.trim() === ""){
-
-        alert("Por favor, ingresa texto en el área de texto.");
-    }else{
-        botonEncriptar();
+    for(let i = 0 ; i < matrizCodigo1.length ; i++){ // for recorre toda la array
+        if(stringEncriptada.includes(matrizCodigo1[i][0])){ // verifica el primer elemento del par del indique 0 del array
+            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo1[i][0] , [matrizCodigo1[i][1]]);
+        }
     }
-
+    return stringEncriptada;
 }
 
-function noTexto2(){
-    if(textArea1.value.trim() === ""){
+function desEncriptar(stringDesencriptada){
+    let matrizCodigo2 = [["enter" , "e"] , ["imes" , "i"] , ["ai" , "a"] , ["ober" , "o"] , ["ufat" , "u"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase();
 
-        alert("Por favor, ingresa texto en el área de texto.");
-    }else{
-        botonDesencriptar();
+    for(let i = 0 ; i < matrizCodigo2.length ; i++){ // for recorre toda la array
+        if(stringDesencriptada.includes(matrizCodigo2[i][0])){ // verifica el primer elemento del par del indique 0 del array
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo2[i][0] , [matrizCodigo2[i][1]]);
+        }
     }
-
+    return stringDesencriptada;
 }
 
 function restringirCaracteres(textArea1){ 
@@ -57,6 +62,26 @@ function restringirCaracteres(textArea1){
         reglaAplicada = true ; 
      }
     }
+}
+
+function noTexto1(){
+    if(textArea1.value.trim() === ""){
+
+        alert("Por favor, ingresa texto en el área de texto.");
+    }else{
+        botonEncriptar();
+    }
+
+}
+
+function noTexto2(){
+    if(textArea1.value.trim() === ""){
+
+        alert("Por favor, ingresa texto en el área de texto.");
+    }else{
+        botonDesencriptar();
+    }
+
 }
 
 function botonEncriptar(){
@@ -83,42 +108,19 @@ function botonDesencriptar(){
     textArea1.value = "Copia el texto\nPégalo aquí\nHaz clic en: Encriptar\nMira el resultado";
 }
 
-function encriptar(stringEncriptada){
-    let matrizCodigo1 = [["e" , "enter"] , ["i" , "imes"] , ["a" , "ai"] , ["o" , "ober"] , ["u" , "ufat"]];
-    stringEncriptada = stringEncriptada.toLowerCase();
-
-    for(let i = 0 ; i < matrizCodigo1.length ; i++){ // for recorre toda la array
-        if(stringEncriptada.includes(matrizCodigo1[i][0])){ // verifica el primer elemento del par del indique 0 del array
-            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo1[i][0] , [matrizCodigo1[i][1]]);
-        }
-    }
-    return stringEncriptada;
-}
-
-function desEncriptar(stringDesencriptada){
-    let matrizCodigo2 = [["enter" , "e"] , ["imes" , "i"] , ["ai" , "a"] , ["ober" , "o"] , ["ufat" , "u"]];
-    stringDesencriptada = stringDesencriptada.toLowerCase();
-
-    for(let i = 0 ; i < matrizCodigo2.length ; i++){ // for recorre toda la array
-        if(stringDesencriptada.includes(matrizCodigo2[i][0])){ // verifica el primer elemento del par del indique 0 del array
-            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo2[i][0] , [matrizCodigo2[i][1]]);
-        }
-    }
-    return stringDesencriptada;
-}
-
 function copiar(){
-    let textoCopiado = document.querySelector(".block2_desencriptar");
 
     textoCopiado.select();
     textoCopiado.setSelectionRange(0, 99999);
 
-    navigator.clipboard.writeText(textoCopiado.value);
+    navigator.clipboard.writeText(textoCopiado.value).then(() => {window.scrollTo ({ top:0, behavior: "smooth"});
+    });
 
     textArea2.value = "";
     textArea1.value = "";
     ocultarTextArea2();
     mostrarImagen();
+    mostrarBotonPaste();
 
     if(encriptado){
         botonDes.removeAttribute("disabled"); 
@@ -128,10 +130,41 @@ function copiar(){
         
 }
 
+function pegar(){
+    
+    navigator.clipboard.readText().then(textoPegado => {
+        textArea1.value = textoPegado;
+
+        window.scrollTo ({ top:0, behavior: "smooth"});
+    })
+    .catch(err => {
+        console.error("Failed to paste: ", err);
+      });
+    ocultarBotonPaste();
+}
+
+function mostrarBotonPaste(){
+
+    if(botonPaste.style.display === "block"){
+        botonPaste.style.display = "none";
+    } else {
+        botonPaste.style.display = "block";
+    }
+}
+
+function ocultarBotonPaste(){
+ 
+    if(botonPaste.style.display === "none"){
+        botonPaste.style.display = "block";
+    } else {
+        botonPaste.style.display = "none";
+    }
+}
+
 function mostrarImagen(){
     let imagen = document.querySelector(".block2_resultado_imagen");
 
-    if(imagen.style.display === "bloack"){
+    if(imagen.style.display === "block"){
         imagen.style.display = "none";
     } else {
         imagen.style.display = "block";
@@ -199,7 +232,7 @@ function controlScroll(){
                 top: posicionDestino,behavior: "smooth"});
         }); 
         
-    scrollAply= true;
+        scrollAply= true;
     }
 }
 

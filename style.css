@@ -54,10 +54,6 @@ body{
     width: 100%;
 }
 
-  .block1_encriptar:focus{
-    outline: none;
-  }
-
 .reglas_imagen{
     display: flex;
     align-items: center;
@@ -87,16 +83,30 @@ body{
 
 .block1_boton_Desencrip{
     font-size: 1rem;
-    color: var(--fuente-color1);
+    color: var(--fuente-color2);
     border: 1px solid var(--color-secundario);
-    background-color: var(--color-primario);
+    background-color: var(--color-secundario);
     border-radius: 1.5rem;
     padding: 1.5rem 0;  
     width: 100%;
 }
 
+.block1_boton_pegar{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fuente-color1);
+    border: 3px solid var(--color-secundario);
+    background-color: var(--color-primario);
+    border-radius: 1.5rem;
+    padding: 1.5rem 0;
+    width: 100%;
+    display: none;
+}
+
 .block1_boton_Desencrip:disabled, .block1_boton_Encrip:disabled {
     background: var(--color-disabled-boton);
+    border: 1px solid var(--color-disabled-boton);
+    cursor: not-allowed;
 }
 
 .block2{
@@ -143,8 +153,9 @@ body{
 
 .block2_boton_copiar{
     font-size: 1rem;
+    font-weight: 600;
     color: var(--fuente-color1);
-    border: 1px solid var(--color-secundario);
+    border: 3px solid var(--color-secundario);
     background-color: var(--fuente-color2);
     border-radius: 1.5rem;
     padding: 1.5rem 0;  
