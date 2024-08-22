@@ -21,7 +21,7 @@ Este proyecto es una herramienta sencilla para encriptar y desencriptar texto. I
 2. *Desencriptar un mensaje*:
    - Pega el texto encriptado en el área de entrada.
    - Haz clic en el botón "Desencriptar".
-   - El texto original aparecerá en el área de salida.
+   - El texto original aparecerá en el área de salida..
 
 3. *Copiar el mensaje*:
    - Después de encriptar o desencriptar un mensaje, haz clic en el botón "Copiar" para guardar el texto en el portapapeles.
