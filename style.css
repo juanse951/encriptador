@@ -177,7 +177,7 @@ body{
 @media (max-width: 820px) {
    
     .logo_alura{
-        content: url("assets/aTablet.png");
+        content: url("/assets/aTablet.png");
         margin: 4.5rem 0 0 2.5rem;
     }
 
@@ -211,7 +211,7 @@ body{
     .block2_resultado_imagen{
         width: auto;
         height: auto;
-        content: url("assets/imagenTablet.png");
+        content: url("/assets/imagenTablet.png");
         position: relative;
         }
 
@@ -220,7 +220,7 @@ body{
   @media (max-width: 480px) {
 
     .logo_alura{
-        content: url("assets/aPhone.png");
+        content: url("/assets/aPhone.png");
         margin: 0;
         width: 100vw;
     }
@@ -251,7 +251,7 @@ body{
     }
 
     .block2_resultado_imagen{
-        content: url("assets/imagenPhone.png");
+        content: url("/assets/imagenPhone.png");
         }
   }
 
