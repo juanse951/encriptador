@@ -178,7 +178,7 @@ body{
 @media (max-width: $breakpoint-medium) {
    
     .logo_alura{
-        background-image: url("assets/aTablet.png");
+        background-image: url("assets/imagen/aTablet.png");
         margin: 4.5rem 0 0 2.5rem;
     }
 
@@ -212,7 +212,7 @@ body{
     .block2_resultado_imagen{
         width: auto;
         height: auto;
-        background-image: url("assets/imagenTablet.png");
+        background-image: url("assets/imagen/imagenTablet.png");
         position: relative;
         }
 
@@ -221,7 +221,7 @@ body{
   @media (max-width: 480px) {
 
     .logo_alura{
-        background-image: url("assets/aPhone.png");
+        background-image: url("assets/imagen/aPhone.png");
         margin: 0;
         width: 100vw;
     }
@@ -252,7 +252,7 @@ body{
     }
 
     .block2_resultado_imagen{
-        background-image: url("assets/imagenPhone.png");
+        background-image: url("assets/imagen/imagenPhone.png");
         }
   }
 
