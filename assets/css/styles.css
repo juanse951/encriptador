@@ -104,24 +104,28 @@ body {
 .block2 {
   display: flex;
   flex-flow: column;
-  width: 33.3%;
-  height: auto;
+  width: 33.3vw;
+  height: 90vh;
   background-color: var(--color-terciario);
   border-radius: 1.5rem;
   position: relative;
   margin: 0rem 2.5rem 2.5rem 0rem; }
 
 .block2_resultado_imagen {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2; }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/Resultado.png");
+  /*background-repeat: no-repeat;*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute; }
 
 .block2_area_imagen {
   height: auto;
   width: auto;
-  position: relative;
-  z-index: 1;
   margin: 2rem;
   display: none; }
 
@@ -155,7 +159,9 @@ body {
 
 @media (max-width: 820px) {
   .logo_alura {
-    background-image: url("assets/imagen/aTablet.png");
+    background-image: url("../images/aTablet.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     margin: 4.5rem 0 0 2.5rem; }
 
   .principal_container {
@@ -163,7 +169,6 @@ body {
     gap: 4rem; }
 
   .block1 {
-    height: auto;
     width: auto;
     margin: 5rem 2.5rem 0rem 2.5rem; }
 
@@ -171,7 +176,6 @@ body {
     height: 23rem; }
 
   .block2 {
-    height: auto;
     width: auto;
     margin: 0rem 2.5rem 2.5rem 2.5rem; }
 
@@ -181,11 +185,11 @@ body {
   .block2_resultado_imagen {
     width: auto;
     height: auto;
-    background-image: url("assets/imagen/imagenTablet.png");
-    position: relative; } }
+    background-image: url("../images/imagenPhone.png"); } }
 @media (max-width: 480px) {
   .logo_alura {
-    background-image: url("assets/imagen/aPhone.png");
+    background-image: url("../images/aPhone.png");
+    background-repeat: no-repeat;
     margin: 0;
     width: 100vw; }
 
@@ -208,6 +212,7 @@ body {
     height: 15rem; }
 
   .block2_resultado_imagen {
-    background-image: url("assets/imagen/imagenPhone.png"); } }
+    background-image: url("../images/imagenPhone.png");
+    /*background-repeat: no-repeat;*/ } }
 
 /*# sourceMappingURL=styles.css.map */
