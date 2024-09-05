@@ -6,10 +6,10 @@ let botonDes = document.querySelector(".block1_boton_Desencrip");
 let botonCopy = document.querySelector(".block2_boton_copiar"); 
 let botonPaste = document.querySelector(".block1_boton_pegar");
 let textoCopiado = document.querySelector(".block2_desencriptar");
+let Advertencia = document.querySelector(".reglas_imagen");
 let encriptado = false;
 let reglaAplicada = true;
 let scrollAply = false;
-let fondoBlock2 = false;
 //-------------------------------------------------
 
 //eventos agregados--------------------------------
@@ -57,6 +57,8 @@ function restringirCaracteres(textArea1){
         reglasTexto.style.fontSize = "1.3rem";
         reglasTexto.style.color = "red";
         reglaAplicada = false ;
+
+        Advertencia.scrollIntoView({behavior: "smooth" , block: "center"});
     }else{
         if(!reglaAplicada){
         reglasImagen.style.width = "";
