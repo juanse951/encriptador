@@ -16,36 +16,38 @@
         
     </header>
 
-    <main class="principal_container">
+    <main class="principal_container" role="main">
   
-        <section class="block1">
+        <section class="block1" role="region" aria-labelledby="block1_titulo">
+            <h2 id="block1_titulo" class="visually-hidden">Área de Encriptación</h2>
 
             <textarea  class="block1_encriptar" name="TextoEncriptar" rows="15" cols="30" placeholder="Ingrese el texto aquí"></textarea>
 
             <div class="reglas_imagen">
                 <img class="block1_reglas_imagen" src="assets/images/alert.png" alt="signo de exclamacion">
-                <p class="block1_reglas">Solo letras minúsculas, sin acento y no caracteres especiales</p>
+                <p class="block1_reglas" role="alert">Solo letras minúsculas, sin acento y no caracteres especiales</p>
             </div> 
 
             <div class="block1_botones">
 
-                <button class="block1_boton_Encrip" onclick="noTexto1()">Encriptar</button>
-                <button class="block1_boton_pegar" onclick="pegar()">Pegar</button>
-                <button class="block1_boton_Desencrip" onclick="noTexto2()">Desencriptar</button>
+                <button class="block1_boton_Encrip" onclick="noTexto1()" aria-label="Encriptar el texto ingresado">Encriptar</button>
+                <button class="block1_boton_pegar" onclick="pegar()" aria-label="Pegar el texto desde el portapapeles">Pegar</button>
+                <button class="block1_boton_Desencrip" onclick="noTexto2()" aria-label="Desencriptar el texto ingresado">Desencriptar</button>
 
             </div>
 
         </section>
 
         
-        <section class="block2">
+        <section class="block2" role="region" aria-labelledby="block2_titulo">
+            <h2 id="block2_titulo" class="visually-hidden">Área de Desencriptación</h2>
 
            <img class="block2_resultado_imagen" src="assets/images/Resultado.png" alt="Imagen indicando Ningun mensaje encontrado">
 
             <div class="block2_area_imagen">
 
                 <textarea  class="block2_desencriptar" name="TextoDesencriptar" rows="23" cols="20" placeholder="Ingrese el texto aquí"></textarea>
-                <button class="block2_boton_copiar" onclick="copiar()">Copiar</button>
+                <button class="block2_boton_copiar" onclick="copiar()" aria-label="Copiar el texto al portapapeles">Copiar</button>
 
             </div>
 
@@ -53,14 +55,14 @@
         
     </main>
 
-    <footer class="footer"> Desarrollado por Juan Giraldo para AluraLatam/Oracle
+    <footer class="footer" role="contentinfo"> Desarrollado por Juan Giraldo para AluraLatam/Oracle
         <div class="presentacion_enlace">
 
              <a class="presentacion_link" href="https://github.com/juanse951">
-                <img src="assets/images/github.png" alt="logo github"></a>
+                <img src="assets/images/github.png" alt="logo de red social github"></a>
 
             <a class="presentacion_link" href="https://www.linkedin.com/in/juanse951/">
-                <img src="assets/images/linkedin.png" alt="logo Linkedin"></a>
+                <img src="assets/images/linkedin.png" alt="logo de red social Linkedin"></a>
           </div>
     </footer>
 
