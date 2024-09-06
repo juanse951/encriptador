@@ -191,6 +191,11 @@ body {
   white-space: nowrap;
 }
 
+.mail{
+  text-decoration: none;
+  color: var(--color-disabled-boton);
+}
+
 @media (max-width: 820px) {
 
   .logo_alura {
